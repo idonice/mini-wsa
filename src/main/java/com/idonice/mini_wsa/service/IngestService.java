@@ -33,13 +33,16 @@ public class IngestService {
 
     private final EventValidator eventValidator;
     private final AttackClassifier attackClassifier;
+    private final ThreatScoreCalculator threatScoreCalculator;
     private final EventRepository eventRepository;
 
     public IngestService(EventValidator eventValidator,
                          AttackClassifier attackClassifier,
+                         ThreatScoreCalculator threatScoreCalculator,
                          EventRepository eventRepository) {
         this.eventValidator = eventValidator;
         this.attackClassifier = attackClassifier;
+        this.threatScoreCalculator = threatScoreCalculator;
         this.eventRepository = eventRepository;
     }
 
@@ -89,10 +92,17 @@ public class IngestService {
 
     private void enrich(Event event, Instant receivedAt) {
         Category category = event.getRule().category();
+        long recentEvents = countRecentEventsFromSameIp(event);
 
         event.setReceivedAt(receivedAt);
         event.setAttackType(attackClassifier.classify(category));
-        // v0.2: compute risk score from severity, category, and attack type
+        event.setThreatScore(threatScoreCalculator.calculate(event, recentEvents));
+    }
+
+    private long countRecentEventsFromSameIp(Event event) {
+        Instant to = event.getTimestamp();
+        Instant from = to.minus(ThreatScoreCalculator.REPEAT_OFFENDER_WINDOW);
+        return eventRepository.countByClientIpAndTimestampBetween(event.getClientIp(), from, to);
     }
 
     private Event toEvent(EventRequest request) {
