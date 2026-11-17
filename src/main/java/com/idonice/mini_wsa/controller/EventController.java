@@ -1,6 +1,6 @@
 package com.idonice.mini_wsa.controller;
 
-import com.idonice.mini_wsa.dto.IngestResult;
+import com.idonice.mini_wsa.dto.ingest.IngestResult;
 import com.idonice.mini_wsa.service.IngestService;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;

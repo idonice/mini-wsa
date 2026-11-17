@@ -1,10 +1,10 @@
 package com.idonice.mini_wsa.service;
 
-import com.idonice.mini_wsa.dto.EventError;
-import com.idonice.mini_wsa.dto.EventRequest;
-import com.idonice.mini_wsa.dto.GeoLocationRequest;
-import com.idonice.mini_wsa.dto.IngestResult;
-import com.idonice.mini_wsa.dto.RuleRequest;
+import com.idonice.mini_wsa.dto.ingest.EventError;
+import com.idonice.mini_wsa.dto.ingest.EventRequest;
+import com.idonice.mini_wsa.dto.ingest.GeoLocationRequest;
+import com.idonice.mini_wsa.dto.ingest.IngestResult;
+import com.idonice.mini_wsa.dto.ingest.RuleRequest;
 import com.idonice.mini_wsa.model.Category;
 import com.idonice.mini_wsa.model.Event;
 import com.idonice.mini_wsa.model.GeoLocation;

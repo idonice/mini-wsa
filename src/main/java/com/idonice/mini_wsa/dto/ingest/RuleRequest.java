@@ -1,4 +1,4 @@
-package com.idonice.mini_wsa.dto;
+package com.idonice.mini_wsa.dto.ingest;
 
 import com.idonice.mini_wsa.model.Category;
 import com.idonice.mini_wsa.model.Severity;

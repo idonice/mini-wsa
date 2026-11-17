@@ -1,6 +1,6 @@
 package com.idonice.mini_wsa.service;
 
-import com.idonice.mini_wsa.dto.EventRequest;
+import com.idonice.mini_wsa.dto.ingest.EventRequest;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.Validator;
 import org.springframework.stereotype.Component;
