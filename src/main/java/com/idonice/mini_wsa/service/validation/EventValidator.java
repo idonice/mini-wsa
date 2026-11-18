@@ -1,4 +1,4 @@
-package com.idonice.mini_wsa.service;
+package com.idonice.mini_wsa.service.validation;
 
 import com.idonice.mini_wsa.dto.ingest.EventRequest;
 import jakarta.validation.ConstraintViolation;

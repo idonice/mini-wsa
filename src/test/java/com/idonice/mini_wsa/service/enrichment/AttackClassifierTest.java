@@ -1,4 +1,4 @@
-package com.idonice.mini_wsa.service;
+package com.idonice.mini_wsa.service.enrichment;
 
 import com.idonice.mini_wsa.model.Category;
 import org.junit.jupiter.params.ParameterizedTest;

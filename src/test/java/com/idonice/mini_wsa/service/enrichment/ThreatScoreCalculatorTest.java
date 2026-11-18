@@ -1,4 +1,4 @@
-package com.idonice.mini_wsa.service;
+package com.idonice.mini_wsa.service.enrichment;
 
 import com.idonice.mini_wsa.model.Action;
 import com.idonice.mini_wsa.model.Category;
@@ -28,7 +28,7 @@ class ThreatScoreCalculatorTest {
     @ParameterizedTest
     @CsvSource({"DENY, 30", "ALERT, 20", "MONITOR, 10"})
     void actionPointsAreAddedToSeverity(Action action, int expected) {
-        Event event = event(Severity.LOW, action, PLAIN_PATH);   // LOW = 10
+        Event event = event(Severity.LOW, action, PLAIN_PATH);  
         assertThat(calculator.calculate(event, 0)).isEqualTo(expected);
     }
 

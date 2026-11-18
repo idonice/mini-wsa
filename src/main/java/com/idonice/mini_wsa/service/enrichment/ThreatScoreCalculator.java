@@ -1,4 +1,4 @@
-package com.idonice.mini_wsa.service;
+package com.idonice.mini_wsa.service.enrichment;
 
 import com.idonice.mini_wsa.model.Action;
 import com.idonice.mini_wsa.model.Event;
